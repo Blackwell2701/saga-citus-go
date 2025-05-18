@@ -39,7 +39,11 @@ func (h *OrderHandler) NewOrder(c *gin.Context) {
 		"price":   req.Price,
 	}).Info("order created successfully")
 
-	c.JSON(http.StatusCreated, gin.H{"message": "order created"})
+	c.JSON(http.StatusCreated, gin.H{
+		"message": "order created",
+		"id":      id,
+	})
+
 }
 
 func (h *OrderHandler) GetOrderByID(c *gin.Context) {
