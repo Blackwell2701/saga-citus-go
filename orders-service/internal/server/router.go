@@ -10,6 +10,6 @@ func setupRoutes(r *gin.Engine, orderHandler *handlers.OrderHandler) {
 	{
 		public.POST("/orders/", orderHandler.NewOrder)
 		public.GET("/orders/:id", orderHandler.GetOrderByID)
-		public.PUT("/status/:id", orderHandler.UpdateOrderStatus)
+		public.PUT("/orders/:id/status", orderHandler.UpdateOrderStatus)
 	}
 }
